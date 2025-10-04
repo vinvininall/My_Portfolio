@@ -1,1 +1,380 @@
 <!-- Content of my_portfolio.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #181823;
+      --accent: #4ecca3;
+      --primary: #232946;
+      --text: #f6f7fb;
+      --muted: #eef0f3;
+    }
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    body {
+      background: var(--main-bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    #logo:hover{
+      cursor:pointer; 
+    }
+
+
+
+    nav {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    nav #logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav ul li a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      background: linear-gradient(135deg, var(--primary), var(--main-bg));
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      max-width:850px
+    }
+    .hero img {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 24px 0 rgba(78,204,163,0.2);
+    }
+    .hero h1 {
+      font-size: 2.5rem; color: var(--text);
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+    .hero p {
+      max-width: 500px;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.15rem;
+    }
+    .hero .hero-btn {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.9rem 2.5rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+      box-shadow: 0 4px 12px 0 rgba(78,204,163,0.18);
+    }
+    .hero .hero-btn:hover {
+      background: #39b188;
+    }
+    .card-container {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    background: #23243a;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px #0006;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: 1.5px;
+    }
+
+    .about-me {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .about-me-text {
+      color: var(--muted);
+      max-width: 700px;
+      font-size: 1.13rem;
+      text-align: center;
+      line-height: 1.65;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .gallery img {
+      border-radius: 18px;
+      width: 170px; height: 170px;
+      object-fit: cover;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.18);
+    }
+    .gallery img:hover {
+      transform: scale(1.10) rotate(-3deg);
+      box-shadow: 0 10px 32px 0 rgba(78,204,163,0.25);
+    }
+
+    .contact-form {
+      background: var(--primary);
+      border-radius: 20px;
+      max-width: 500px; margin: 2rem auto 0;
+      box-shadow: 0 2px 30px 0 rgba(34,23,80,0.08);
+      padding: 2rem 2.5rem;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: .7rem;
+      background: #212230;
+      color: var(--text);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: .8rem 2rem;
+      font-weight: 700;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: .5rem;
+      font-size: 1.07rem;
+      transition: background .2s;
+    }
+    #Working_calculator:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      
+    }
+
+    #Spotify:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    #Fitness:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    #Editor:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    #srgs_pfp {
+      transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-style: preserve-3d;
+      perspective: 1000px; /* gives depth for 3D effect */
+        }
+
+    #srgs_pfp:hover {
+      transform: rotateY(180deg);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .contact-form button:hover {
+      background: #399671;
+    }
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 1.5rem; }
+      .about-me { font-size: 1rem; }
+      .gallery img { width: 120px; height: 120px; }
+      section { padding: 2.5rem 1rem; }
+      .contact-form { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div id="logo">VININ_ALL</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#aboutme">About</a></li>
+      <li><a href="#gallery">Photos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <section class="hero" id="hero">
+    <img id="srgs_pfp" src="vinayak_12th_photo.jpg" alt="pfp">
+    <h1 id="typewriter-heading">Hello, I'm Vinayak Singal</h1>
+    <p font = "bold"> Student at Scaler School of Technology, Athlete , Tech enthusiast, Aspiring Game Developer.</p>
+    <button class="hero-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Me</button> 
+    <!-- this makes the user go to contact section on pressing the button -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <b>PS:</b> I would like to Thank my instructor , Mrinal Bhattacharya for giving me this opportunity to showcase my portfolio
+  </section>
+
+  <section id="aboutme">
+    <div class="section-title">About Me</div>
+    <div class="about-me">
+      <div class="about-me-text">
+        Hi! I'm Vinayak Singal, a computer science student at SST!. I enjoy building robust and visually appealing web interfaces, automating tasks, and optimizing performance. customizing Linux systems, or playing competitive games, I'm always up for a challenge.<br><br>
+        <b>Skills:</b> HTML, CSS, JavaScript, Python, Java, Mathematics, Linux<br>
+        <b>Interests:</b> Competitive Programming, Basketball, gaming, Game Development, Volleyball
+      </div>
+    </div>
+  </section>
+
+ <section id="projects/achievements">
+  <div class="section-title">Projects & Achievements</div>
+  <div class="projects-text">
+    <ul style= "padding-left: 0;">
+      <li style="margin-bottom:2.1rem; display:flex; align-items:center;">
+        <img src="https://img.icons8.com/color/48/000000/calculator.png" alt="Calculator Icon" style="width:42px;height:42px;margin-right:1.1rem;">
+        <div>
+            <div id="Working_calculator">
+              <span style="color: var(--accent); font-weight: bold;">Working Calculator</span><br>
+              A responsive JavaScript calculator that supports basic arithmetic, clear and memory functions, and is styled to match the site's theme.This was the first project I built using Javascript.
+        </div> 
+      </div>
+      </li>
+      <li style="margin-bottom:2.1rem; display:flex; align-items:center;">
+        <img src="https://img.icons8.com/color/48/000000/spotify.png" alt="Spotify Cache Icon" style="width:42px;height:42px;margin-right:1.1rem;">
+        <div id="Spotify">
+          <span style="color: var(--accent); font-weight: bold;">Spotify Cache System</span><br>
+          Developed a caching system to optimize Spotify's music streaming using smart local storage, resulting in faster playback and reduced bandwidth for frequent tracks.
+        </div>
+      </li>
+      <li style="margin-bottom:2.1rem; display:flex; align-items:center;">
+        <img src="https://img.icons8.com/color/48/000000/dumbbell.png" alt="Fitness Tracker Icon" style="width:42px;height:42px;margin-right:1.1rem;">
+        <div id="Fitness">
+          <span style="color: var(--accent); font-weight: bold;">Fitness Tracker App</span><br>
+          A personal fitness tracker app with workout logging, goal visualization, and daily achievement badges—built using modern web technologies and a mobile-first approach.
+        </div>
+      </li>
+      <li style="margin-bottom:2.1rem; display:flex; align-items:center;">
+        <img src="https://img.icons8.com/color/48/000000/image.png" alt="Image Editor Icon" style="width:42px;height:42px;margin-right:1.1rem;">
+        <div id = "Editor">
+          <span style="color: var(--accent); font-weight: bold;">Personal Image Editor</span><br>
+          Designed and launched a web-based image editor allowing users to crop, filter, annotate, and export images with an intuitive interface.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+  <section id="gallery">
+    <div class="section-title">Gallery</div>
+    <div class="gallery">
+      <img src="ALLEN_photo.jpg" alt="Gallery Photo 1">
+      <img src="srgs.jpg    " alt="Gallery Photo 2">
+      <img src="sikkim_ice.jpg" alt="Gallery Photo 3">
+      <img src="grad2.jpg" alt="Gallery Photo 4">
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">Contact Me</div>
+    <form class="contact-form" onsubmit="return showAlert();">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    function showAlert() {
+      alert("Thank you for reaching out! I'll get back to you soon.");
+      return false; // Prevent actual submission for demo
+    }
+
+      const text = "Hello, I'm Vinayak Singal";
+      const heading = document.getElementById("typewriter-heading");
+
+      function typeWriterEffect() {
+        heading.textContent = "";
+        let i = 0;
+        function type() {
+          if (i <= text.length) {
+            heading.textContent = text.slice(0, i);
+            i++;
+            setTimeout(type, 90); // controls typing speed in ms
+          } else {
+            setTimeout(typeWriterEffect, 5000); // wait 5s, then repeat
+          }
+        }
+        type();
+      }
+      typeWriterEffect();
+</script>
+
+</body>
+</html>
